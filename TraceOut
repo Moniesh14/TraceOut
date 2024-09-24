@@ -1,0 +1,32 @@
+package cn;
+import java.util.Random;
+public class experiment4b {
+	 public static void main(String[] args) {
+	        int maxHops = 10;  
+	        int minTime = 20;  
+	        int maxTime = 100; 
+	        Random random = new Random();
+
+	        System.out.println("Traceroute Simulation:");
+	        
+	        for (int hop = 1; hop <= maxHops; hop++) {
+	            int time = random.nextInt(maxTime - minTime + 1) + minTime; 
+	            boolean isLastHop = random.nextInt(10) < 2; 
+	            String hopIP = "192.168." + random.nextInt(255) + "." + random.nextInt(255);
+
+	            System.out.println(hop + "  " + hopIP + "  " + time + " ms");
+	            if (isLastHop) {
+	                System.out.println("Destination reached at hop " + hop + ".");
+	                break;
+	            }
+
+	            try {
+	                Thread.sleep(100); 
+	            } catch (InterruptedException e) {
+	                e.printStackTrace();
+	            }
+	        }
+
+	        System.out.println("Traceroute simulation completed.");
+	    }
+}
