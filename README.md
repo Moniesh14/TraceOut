@@ -1,0 +1,1 @@
+A **simulation** is a process of creating a virtual model or representation of a real-world system, process, or environment to study its behavior under different conditions. It allows you to test and predict outcomes without physically performing the actions, often using computer software.
